@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "2cd8afc0-c1e6-43d7-bb1a-e121a947c29c",
+		"name": "pqrsUts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7819792"
+	},
+	"item": [
+		{
+			"name": "getPqrs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pqrs-activas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pqrs-activas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postPqrs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_radicado\": {\r\n        \"asunto\": \"Peticion por perdida de articulo\",\r\n        \"descripcion\": \"Se me perdio el articulo se perdio el dia 02 del mes 06 del año 2014\"\r\n    },\r\n    \"_propietario\": {\r\n        \"nombres\": \"Tom\",\r\n        \"apellidos\": \"Cruz\",\r\n        \"dni\": \"1245879\",\r\n        \"email\": \"tom.cruz@gmail.com\",\r\n        \"contacto\": \"3504284093\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/pqrs-crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pqrs-crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putEstadoRadicado",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_trazabilidad\": {\r\n        \"respuesta\": \"Se finaliza\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/pqrs-estado?_nroRadicado=1730671880&_estado=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pqrs-estado"
+					],
+					"query": [
+						{
+							"key": "_nroRadicado",
+							"value": "1730671880"
+						},
+						{
+							"key": "_estado",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
